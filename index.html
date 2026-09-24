@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Name</title>
+  <meta name="description" content="A short description of the business.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="logo">Business Name</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>A short, catchy headline</h1>
+        <p>One or two sentences about what the business does and who it's for.</p>
+        <a href="#contact" class="button">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>Tell the story of the business here: who runs it, how it started, and what makes it different.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Service one</h3>
+            <p>A short description of this service.</p>
+          </div>
+          <div class="card">
+            <h3>Service two</h3>
+            <p>A short description of this service.</p>
+          </div>
+          <div class="card">
+            <h3>Service three</h3>
+            <p>A short description of this service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p>Phone: (555) 555-5555</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Business Name</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

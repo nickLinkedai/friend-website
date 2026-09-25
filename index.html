@@ -26,9 +26,9 @@
         <svg class="logo-moon"><use href="#moon"/></svg>MOONMADE
       </a>
       <nav class="nav-right">
-        <a href="order.html">Order</a>
         <a href="#contact">Contact</a>
         <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" class="cart-link" data-cart-open>Cart (<span data-cart-count>0</span>)</a>
       </nav>
     </div>
   </header>
@@ -63,39 +63,8 @@
           <p class="eyebrow">Collection 01</p>
         </div>
 
-        <!--
-          To add a real photo: put it in the images/ folder, then replace the
-          <div class="product-img placeholder">...</div> with:
-          <img class="product-img" src="images/your-photo.jpg" alt="Describe the bag">
-        -->
-        <div class="products">
-          <a class="product" href="order.html?bag=crescent">
-            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
-            <div class="product-info">
-              <h3>The Crescent Bag</h3>
-              <p class="price">$000</p>
-              <p class="variant">Black · Cream</p>
-            </div>
-          </a>
-          <a class="product" href="order.html?bag=eclipse">
-            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
-            <div class="product-info">
-              <h3>The Eclipse Pouch</h3>
-              <p class="price">$000</p>
-              <p class="variant">Dark Brown</p>
-            </div>
-          </a>
-          <a class="product" href="order.html?bag=tide">
-            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
-            <div class="product-info">
-              <h3>The Tide Bag</h3>
-              <p class="price">$000</p>
-              <p class="variant">Butter · Black</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="shop-note"><a href="order.html" class="button">Place an order</a></div>
+        <!-- The bags are listed in products.js -->
+        <div class="products" id="product-grid"></div>
       </div>
     </section>
 
@@ -113,7 +82,7 @@
       <div class="container contact">
         <p class="eyebrow">Contact</p>
         <h2>Say hello</h2>
-        <p>To order, use the <a href="order.html">order form</a>. For questions, message us on Instagram<br>
+        <p>For questions about an order or a custom piece, message us on Instagram<br>
           <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">@moonmade___</a></p>
       </div>
     </section>
@@ -128,7 +97,7 @@
       <div>
         <h4>Shop</h4>
         <a href="#shop">The Bags</a>
-        <a href="order.html">Order</a>
+        <a href="#" data-cart-open>Cart</a>
       </div>
       <div>
         <h4>Company</h4>
@@ -145,6 +114,8 @@
     </div>
   </footer>
 
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

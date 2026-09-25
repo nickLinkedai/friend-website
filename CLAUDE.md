@@ -20,9 +20,10 @@ Every push to the `main` branch automatically updates the live site within about
   small uppercase labels with wide letter-spacing, lots of white space, square product photos.
 - Subtle moon/astrology touches (crescent logo, moon-phase divider). Keep them understated.
 - Brand colors and fonts live in the `:root` block at the top of `style.css`.
-- Product photos go in `images/`. Instructions for swapping a placeholder for a photo are in a comment above the product grid in `index.html`.
+- Product photos go in `images/` and are linked from `products.js` (`image: 'images/name.jpg'`).
 
-## Order form
-- `order.html` is the order form. Orders are emailed to the owner through FormSubmit.co (free, no account).
-- The receiving email is `ORDER_EMAIL` near the bottom of `order.html`. The first order after changing it triggers an activation email that must be clicked once.
-- The bags, prices and colours offered on the form are in `PRODUCTS` in `order.html`. When a bag is added or changed in the Shop section of `index.html`, update `PRODUCTS` to match.
+## Shop, cart and checkout
+- `products.js` is the single list of bags (name, price, colours, photo) plus `ORDER_EMAIL`. The shop grid, cart and checkout all read from it. To add, remove or change a bag, edit only this file.
+- `cart.js` draws the shop grid, runs the slide-out cart drawer and saves the cart in the browser (localStorage) so it carries between pages.
+- `checkout.html` is the checkout form. Orders are emailed to `ORDER_EMAIL` through FormSubmit.co (free, no account). The first order after changing the email triggers an activation email that must be clicked once.
+- No payment is taken online; the owner emails the customer to confirm and arrange payment.

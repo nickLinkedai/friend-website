@@ -21,3 +21,8 @@ Every push to the `main` branch automatically updates the live site within about
 - Subtle moon/astrology touches (crescent logo, moon-phase divider). Keep them understated.
 - Brand colors and fonts live in the `:root` block at the top of `style.css`.
 - Product photos go in `images/`. Instructions for swapping a placeholder for a photo are in a comment above the product grid in `index.html`.
+
+## Order form
+- `order.html` is the order form. Orders are emailed to the owner through FormSubmit.co (free, no account).
+- The receiving email is `ORDER_EMAIL` near the bottom of `order.html`. The first order after changing it triggers an activation email that must be clicked once.
+- The bags, prices and colours offered on the form are in `PRODUCTS` in `order.html`. When a bag is added or changed in the Shop section of `index.html`, update `PRODUCTS` to match.

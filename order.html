@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — MoonMade</title>
+  <meta name="description" content="Order a handmade MoonMade bag.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M20 4a12 12 0 1 0 8 20A10 10 0 0 1 20 4z' fill='%231c1c1c'/></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Reusable crescent moon shape -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="moon" viewBox="0 0 32 32"><path d="M20 4a12 12 0 1 0 8 20A10 10 0 0 1 20 4z"/></symbol>
+  </svg>
+
+  <div class="announcement">The most delicate soft launch &nbsp;☾&nbsp; Welcome</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <nav class="nav-left">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#about">About</a>
+      </nav>
+      <a href="index.html" class="logo" aria-label="MoonMade home">
+        <svg class="logo-moon"><use href="#moon"/></svg>MOONMADE
+      </a>
+      <nav class="nav-right">
+        <a href="order.html">Order</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container order">
+        <div class="order-head">
+          <svg class="about-moon"><use href="#moon"/></svg>
+          <p class="eyebrow">Order</p>
+          <h2>Place an order</h2>
+          <p class="order-intro">Fill out the form below. Once we receive your order we'll email you to confirm the details and arrange payment. Nothing is charged today.</p>
+        </div>
+
+        <form id="order-form" class="order-form" novalidate>
+          <fieldset>
+            <legend>Your bag</legend>
+            <div class="field-row">
+              <label class="field">
+                <span>Bag</span>
+                <select name="bag" id="bag" required></select>
+              </label>
+              <label class="field">
+                <span>Colour</span>
+                <select name="colour" id="colour" required></select>
+              </label>
+            </div>
+            <div class="field-row">
+              <label class="field">
+                <span>Quantity</span>
+                <input type="number" name="quantity" id="quantity" min="1" max="10" value="1" required>
+              </label>
+              <div class="field summary" aria-live="polite">
+                <span>Estimated total</span>
+                <p id="total">—</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your details</legend>
+            <div class="field-row">
+              <label class="field">
+                <span>Full name</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+            </div>
+            <label class="field">
+              <span>Phone <em>(optional)</em></span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Delivery</legend>
+            <div class="choice-row">
+              <label class="choice">
+                <input type="radio" name="delivery" value="Ship to me" checked>
+                <span>Ship to me</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="delivery" value="Local pickup">
+                <span>Local pickup</span>
+              </label>
+            </div>
+
+            <div id="address-fields">
+              <label class="field">
+                <span>Street address</span>
+                <input type="text" name="address" autocomplete="street-address" required>
+              </label>
+              <div class="field-row three">
+                <label class="field">
+                  <span>City</span>
+                  <input type="text" name="city" autocomplete="address-level2" required>
+                </label>
+                <label class="field">
+                  <span>Province / State</span>
+                  <input type="text" name="region" autocomplete="address-level1" required>
+                </label>
+                <label class="field">
+                  <span>Postal code</span>
+                  <input type="text" name="postal" autocomplete="postal-code" required>
+                </label>
+              </div>
+              <label class="field">
+                <span>Country</span>
+                <input type="text" name="country" autocomplete="country-name" value="Canada" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Anything else?</legend>
+            <label class="field">
+              <span>Notes <em>(optional)</em></span>
+              <textarea name="notes" rows="4" placeholder="Gift message, custom requests, questions…"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- Spam trap: hidden from people, bots fill it in -->
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+
+          <button type="submit" class="button" id="submit-btn">Send order</button>
+        </form>
+
+        <div id="order-success" class="order-success" hidden>
+          <svg class="about-moon"><use href="#moon"/></svg>
+          <h2>Thank you</h2>
+          <p>Your order <strong id="order-ref"></strong> has been sent. We'll email you at <strong id="order-email"></strong> shortly to confirm and arrange payment.</p>
+          <a href="index.html" class="button">Back to MoonMade</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo small"><svg class="logo-moon"><use href="#moon"/></svg>MOONMADE</a>
+        <p class="footer-text">Handmade bags, made under the moon.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="index.html#shop">The Bags</a>
+        <a href="order.html">Order</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> MoonMade</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Settings ----
+    // Orders are emailed to this address via FormSubmit.co (free, no account).
+    // The very first order sends an activation email to this address. Click the link in it once.
+    const ORDER_EMAIL = '';
+
+    // Bags available to order. Keep names/prices in sync with the Shop section in index.html.
+    // The key (e.g. "crescent") is used in links like order.html?bag=crescent
+    const PRODUCTS = {
+      crescent: { name: 'The Crescent Bag', price: 0, colours: ['Black', 'Cream'] },
+      eclipse:  { name: 'The Eclipse Pouch', price: 0, colours: ['Dark Brown'] },
+      tide:     { name: 'The Tide Bag', price: 0, colours: ['Butter', 'Black'] },
+    };
+
+    // ---- Form behaviour ----
+    const form = document.getElementById('order-form');
+    const bagSelect = document.getElementById('bag');
+    const colourSelect = document.getElementById('colour');
+    const quantityInput = document.getElementById('quantity');
+    const totalEl = document.getElementById('total');
+    const addressFields = document.getElementById('address-fields');
+    const errorEl = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+
+    for (const [key, p] of Object.entries(PRODUCTS)) {
+      bagSelect.add(new Option(p.name, key));
+    }
+    const requested = new URLSearchParams(location.search).get('bag');
+    if (requested && PRODUCTS[requested]) bagSelect.value = requested;
+
+    function formatPrice(n) {
+      return n > 0 ? '$' + n.toFixed(2) : 'Price on request';
+    }
+
+    function updateColours() {
+      colourSelect.innerHTML = '';
+      for (const c of PRODUCTS[bagSelect.value].colours) colourSelect.add(new Option(c, c));
+    }
+
+    function updateTotal() {
+      const qty = Math.max(1, parseInt(quantityInput.value, 10) || 1);
+      totalEl.textContent = formatPrice(PRODUCTS[bagSelect.value].price * qty);
+    }
+
+    function updateDelivery() {
+      const shipping = form.delivery.value === 'Ship to me';
+      addressFields.hidden = !shipping;
+      for (const input of addressFields.querySelectorAll('input')) input.required = shipping;
+    }
+
+    bagSelect.addEventListener('change', () => { updateColours(); updateTotal(); });
+    quantityInput.addEventListener('input', updateTotal);
+    form.addEventListener('change', e => { if (e.target.name === 'delivery') updateDelivery(); });
+    updateColours();
+    updateTotal();
+    updateDelivery();
+
+    function showError(message) {
+      errorEl.innerHTML = message;
+      errorEl.hidden = false;
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      errorEl.hidden = true;
+      form.classList.add('submitted');
+
+      if (!form.checkValidity()) {
+        showError('Please fill in the highlighted fields.');
+        form.querySelector(':invalid').focus();
+        return;
+      }
+      if (form._honey.value) return; // bot
+
+      if (!ORDER_EMAIL) {
+        showError('Online ordering isn\'t switched on yet. Please message us on <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a> to order.');
+        return;
+      }
+
+      const product = PRODUCTS[bagSelect.value];
+      const ref = 'MM-' + Date.now().toString(36).toUpperCase().slice(-6);
+      const data = Object.fromEntries(new FormData(form));
+      delete data._honey;
+      if (data.delivery !== 'Ship to me') {
+        for (const k of ['address', 'city', 'region', 'postal', 'country']) delete data[k];
+      }
+
+      const payload = {
+        _subject: `New MoonMade order ${ref}: ${product.name}`,
+        _template: 'table',
+        _captcha: 'false',
+        order_reference: ref,
+        ...data,
+        bag: product.name,
+        estimated_total: totalEl.textContent,
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/' + ORDER_EMAIL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = await res.json().catch(() => ({}));
+        if (!res.ok || String(result.success) === 'false') throw new Error(result.message || res.status);
+
+        document.getElementById('order-ref').textContent = ref;
+        document.getElementById('order-email').textContent = data.email;
+        form.hidden = true;
+        document.querySelector('.order-head').hidden = true;
+        document.getElementById('order-success').hidden = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        showError('Sorry, something went wrong sending your order. Please try again, or message us on <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send order';
+      }
+    });
+  </script>
+</body>
+</html>

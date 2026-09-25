@@ -3,70 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Name</title>
-  <meta name="description" content="A short description of the business.">
+  <title>MoonMade</title>
+  <meta name="description" content="MoonMade — handmade bags. The most delicate soft launch.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M20 4a12 12 0 1 0 8 20A10 10 0 0 1 20 4z' fill='%231c1c1c'/></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Reusable crescent moon shape -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="moon" viewBox="0 0 32 32"><path d="M20 4a12 12 0 1 0 8 20A10 10 0 0 1 20 4z"/></symbol>
+  </svg>
+
+  <div class="announcement">The most delicate soft launch &nbsp;☾&nbsp; Welcome</div>
+
   <header class="site-header">
     <div class="container nav">
-      <a href="#" class="logo">Business Name</a>
-      <nav>
+      <nav class="nav-left">
+        <a href="#shop">Shop</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+      </nav>
+      <a href="#" class="logo" aria-label="MoonMade home">
+        <svg class="logo-moon"><use href="#moon"/></svg>MOONMADE
+      </a>
+      <nav class="nav-right">
         <a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container">
-        <h1>A short, catchy headline</h1>
-        <p>One or two sentences about what the business does and who it's for.</p>
-        <a href="#contact" class="button">Get in touch</a>
+      <div class="hero-inner">
+        <p class="eyebrow">Handmade bags</p>
+        <h1>Made under the moon</h1>
+        <p class="hero-text">Soft, delicate pieces made by hand in small batches.</p>
+        <a href="#shop" class="button">Shop the bags</a>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About</h2>
-        <p>Tell the story of the business here: who runs it, how it started, and what makes it different.</p>
-      </div>
-    </section>
+    <!-- Moon phase divider -->
+    <div class="phases" aria-hidden="true">
+      <span class="phase p-new"></span>
+      <span class="phase p-crescent"></span>
+      <span class="phase p-half"></span>
+      <span class="phase p-gibbous"></span>
+      <span class="phase p-full"></span>
+      <span class="phase p-gibbous r"></span>
+      <span class="phase p-half r"></span>
+      <span class="phase p-crescent r"></span>
+      <span class="phase p-new"></span>
+    </div>
 
-    <section id="services" class="section alt">
+    <section id="shop" class="section">
       <div class="container">
-        <h2>Services</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Service one</h3>
-            <p>A short description of this service.</p>
-          </div>
-          <div class="card">
-            <h3>Service two</h3>
-            <p>A short description of this service.</p>
-          </div>
-          <div class="card">
-            <h3>Service three</h3>
-            <p>A short description of this service.</p>
-          </div>
+        <div class="section-head">
+          <h2>The Bags</h2>
+          <p class="eyebrow">Collection 01</p>
         </div>
+
+        <!--
+          To add a real photo: put it in the images/ folder, then replace the
+          <div class="product-img placeholder">...</div> with:
+          <img class="product-img" src="images/your-photo.jpg" alt="Describe the bag">
+        -->
+        <div class="products">
+          <a class="product" href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">
+            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
+            <div class="product-info">
+              <h3>The Crescent Bag</h3>
+              <p class="price">$000</p>
+              <p class="variant">Black · Cream</p>
+            </div>
+          </a>
+          <a class="product" href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">
+            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
+            <div class="product-info">
+              <h3>The Eclipse Pouch</h3>
+              <p class="price">$000</p>
+              <p class="variant">Dark Brown</p>
+            </div>
+          </a>
+          <a class="product" href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">
+            <div class="product-img placeholder"><svg><use href="#moon"/></svg></div>
+            <div class="product-info">
+              <h3>The Tide Bag</h3>
+              <p class="price">$000</p>
+              <p class="variant">Butter · Black</p>
+            </div>
+          </a>
+        </div>
+
+        <p class="shop-note">To order, send us a message on <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container about">
+        <svg class="about-moon"><use href="#moon"/></svg>
+        <p class="eyebrow">About</p>
+        <h2>A delicate soft launch</h2>
+        <p>MoonMade began as a small studio project: bags made slowly, by hand, one at a time. Each piece is meant to be kept, carried and loved for years.</p>
+        <p>Write the MoonMade story here: who makes the bags, what they're made of, and why the moon.</p>
       </div>
     </section>
 
     <section id="contact" class="section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
-        <p>Phone: (555) 555-5555</p>
+      <div class="container contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Say hello</h2>
+        <p>For orders and questions, message us on Instagram<br>
+          <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">@moonmade___</a></p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Business Name</p>
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo small"><svg class="logo-moon"><use href="#moon"/></svg>MOONMADE</a>
+        <p class="footer-text">Handmade bags, made under the moon.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">The Bags</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/moonmade___/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> MoonMade</p>
     </div>
   </footer>
 

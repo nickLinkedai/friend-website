@@ -1,4 +1,4 @@
-# Website
+# MoonMade website
 
 **Live site:** https://nicklinkedai.github.io/friend-website/
 
